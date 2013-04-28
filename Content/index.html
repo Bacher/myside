@@ -1,9 +1,37 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <meta charset="utf-8" />
+    <title>MySide</title>
+
+    <!-- Vendors -->
+    <script src="vend/jquery-1.9.1.min.js"></script>
+    <script src="vend/spine.js"></script>
+    <script src="vend/spine.local.js"></script>
+
+    <!-- Models -->
+    <script src="app/models/blogpost.model.js"></script>
+
+    <!-- Views -->
+    <script src="app/views/_views.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/controllers/blogpost.controller.js"></script>
+
+    <!-- Application -->
+    <script src="app/app.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div id="viewport"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
