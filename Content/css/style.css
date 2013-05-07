@@ -1,10 +1,14 @@
 .outline {
   outline: 1px solid red;
 }
+body > .container {
+  min-height: 400px;
+}
 .blogpost {
   padding: 16px;
 }
-.blogpost .date {
+.blogpost .date-section .date {
+  position: relative;
   box-sizing: border-box;
   background-color: #dbdbdb;
   border: 1px solid black;
@@ -13,58 +17,200 @@
   text-align: center;
   padding: 4px 0;
 }
-.blogpost .date .day {
+.blogpost .date-section .date .day {
   font-size: 46px;
   font-weight: bold;
   line-height: 40px;
 }
-.blogpost .date .month {
-  font-size: 20px;
+.blogpost .date-section .date .month {
+  font-size: 22px;
   line-height: 20px;
 }
-.blogpost .post {
+.blogpost .date-section .date .datepicker {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.blogpost .post-section .post {
   position: relative;
   padding: 5px;
+  box-shadow: 1px 1px 6px #717171;
 }
-.blogpost .post .title {
+.blogpost .post-section .post .title {
+  height: 50px;
   text-align: center;
 }
-.blogpost .post .status {
+.blogpost .post-section .post .title .titleinput {
+  border: 1px dashed #dbdbdb;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  width: 100%;
+}
+.blogpost .post-section .post .title .titleinput:hover {
+  border: 1px dashed #717171;
+}
+.blogpost .post-section .post .status {
   position: absolute;
   top: 0px;
   right: 0px;
 }
-.blogpost .post .status span {
+.blogpost .post-section .post .status span {
   font-size: 14px;
   color: #717171;
 }
-.blogpost .post .status i {
+.blogpost .post-section .post .status i {
   margin-left: 4px;
 }
-.blogpost .post .footer {
+.blogpost .post-section .post .text {
+  padding: 10px;
+  background-color: #dbdbdb;
+  outline: 1px solid #717171;
+}
+.blogpost .post-section .post .text .texteditor {
+  background-color: white;
+  padding: 2px 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-height: 300px;
+}
+.blogpost .post-section .post .footer {
+  box-sizing: border-box;
   position: relative;
-  height: 80px;
+  padding-top: 8px;
+  height: 88px;
 }
-.blogpost .post .footer .track {
-  width: 160px;
+.blogpost .post-section .post .footer .track {
+  width: 240px;
   margin: 0 auto;
-  border: 1px solid black;
+  outline: 1px solid black;
 }
-.blogpost .post .footer .track .musicplayer {
+.blogpost .post-section .post .footer .track .musicplayer {
   width: 150px;
   height: 80px;
 }
-.blogpost .post .footer .health {
+.blogpost .post-section .post .footer .controls {
   position: absolute;
+  bottom: 0;
+}
+.blogpost .post-section .post .footer .health {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 4px 0;
   right: 0;
   bottom: 0;
   width: 150px;
   height: 80px;
-  border: 1px solid #717171;
+  outline: 1px solid #717171;
+  text-align: center;
 }
-.blogpost .profile {
+.blogpost .post-section .post .footer .health .carma,
+.blogpost .post-section .post .footer .health .activity {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  padding: 4px 0;
+}
+.blogpost .post-section .post .footer .health .carma:before,
+.blogpost .post-section .post .footer .health .carma:after,
+.blogpost .post-section .post .footer .health .activity:before,
+.blogpost .post-section .post .footer .health .activity:after {
+  position: absolute;
+  font-family: FontAwesome;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+}
+.blogpost .post-section .post .footer .health .carma:before {
+  left: -28px;
+  content: '\f088';
+}
+.blogpost .post-section .post .footer .health .carma:after {
+  right: -28px;
+  content: '\f087';
+}
+.blogpost .post-section .post .footer .health .activity:before {
+  left: -28px;
+  content: '\f01a';
+}
+.blogpost .post-section .post .footer .health .activity:after {
+  right: -28px;
+  content: '\f01b';
+}
+.blogpost .post-section .post .notes-section .notes .note {
+  border: 1px solid #dbdbdb;
+  margin-bottom: 4px;
+}
+.blogpost .post-section .post .notes-section .notes .note .breadcrumb {
+  margin-bottom: 0;
+}
+.blogpost .post-section .post .notes-section .notes .note textarea {
+  width: 98%;
+  margin-bottom: 0;
+}
+.blogpost .post-section .post .savebutton {
+  margin-top: 4px;
+  width: 665px;
+}
+.blogpost .post-section .post .comments-section {
+  margin: 6px 0;
+}
+.blogpost .post-section .post .comments-section .comment-text {
+  width: 90%;
+  height: 32px;
+}
+.blogpost .post-section .post .comments-section .comments {
+  border: 1px solid #717171;
+  margin-bottom: 6px;
+}
+.blogpost .post-section .post .comments-section .comments .comment {
+  position: relative;
+  border-bottom: 1px dashed #dbdbdb;
+}
+.blogpost .post-section .post .comments-section .comments .comment p {
+  margin: 3px;
+}
+.blogpost .post-section .post .comments-section .comments .comment .remove-comment {
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  right: 4px;
+  top: 0px;
+}
+.blogpost .post-section .post .comments-section .comments .comment:hover .remove-comment {
+  display: block;
+}
+.blogpost .post-section .post .comments-section .comments .comment:hover .remove-comment:hover {
+  -webkit-transform: scale(1.3);
+}
+.blogpost .profile-section .profile {
   width: 80px;
   height: 80px;
   background-color: #dbdbdb;
+  background-size: cover;
+  background-image: url('../img/empty-avatar.gif');
+}
+.categorymenu {
+  position: relative;
+  padding: 4px;
   border: 1px solid black;
+  border-radius: 5px;
+}
+.categorymenu .dropup {
+  display: inline-block;
+}
+.categorymenu .globebtn,
+.categorymenu .timelinebtn {
+  float: right;
+  margin: 0 2px;
+  border: 1px solid black;
+}
+.timeline > h2 {
+  text-align: center;
 }

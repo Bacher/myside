@@ -5,31 +5,62 @@
     <title>MySide</title>
 
     <!-- Vendors -->
-    <script src="vend/jquery-1.9.1.min.js"></script>
-    <script src="vend/spine.js"></script>
-    <script src="vend/spine.local.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.hotkeys.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-wysiwyg.js"></script>
+
+    <script src="js/spine.js"></script>
+    <script src="js/spine.local.js"></script>
 
     <!-- Models -->
     <script src="app/models/blogpost.model.js"></script>
+    <script src="app/models/category.model.js"></script>
+    <script src="app/models/note.model.js"></script>
+    <script src="app/models/profile.model.js"></script>
 
     <!-- Views -->
     <script src="app/views/_views.js"></script>
 
     <!-- Controllers -->
     <script src="app/controllers/blogpost.controller.js"></script>
+    <script src="app/controllers/categorymenu.controller.js"></script>
+    <script src="app/controllers/timeline.controller.js"></script>
 
     <!-- Application -->
     <script src="app/app.js"></script>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.3.custom.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="span12">
-                <div id="viewport"></div>
+            <div class="span12" id="viewport">
+                <div class="index-view">
+                    <div id="index-viewport">Index</div>
+                </div>
+                <div class="post-view">
+                    <div id="post-viewport"></div>
+                </div>
+                <div class="globe-view">
+                    <div id="globe-viewport">
+                        == GLOBE VIEW ==
+                    </div>
+                </div>
+                <div class="timeline-view">
+                    <div id="timeline-viewport">
+                        == TIMELINE VIEW ==
+                    </div>
+                </div>
+                <div class="categorymenu-view">
+                    <div id="categorymenu-viewport"></div>
+                </div>
             </div>
         </div>
     </div>
