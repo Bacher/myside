@@ -2,12 +2,13 @@
 !function() {
     "use strict";
     
-    var BlogPostModel = Spine.Model.setup("BlogPost", ["topic", "text", "status", "trackId", "comments"]);
+    var BlogPostModel = Spine.Model.setup("BlogPost", ["title", "text", "date", "health", "trackId", "comments"]);
     
     BlogPostModel.include({
-        topic: "",
+        title: "",
         text: "",
-        status: { carma: 0, activity: 0 },
+        date: "1/1/2000", /* MM/DD/YYYY */
+        health: { carma: 0, activity: 0 },
         trackId: null,
         comments: []
     });
@@ -17,4 +18,5 @@
     window.My = window.My || {};
     My.Models = My.Models || {};
     My.Models.BlogPost = BlogPostModel;
+
 }();
