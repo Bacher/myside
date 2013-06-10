@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function svgApply() {
+            var svg = document.getElementById("svg").getSVGDocument();
+            var line = svg.getElementsByTagName("path")[0];
+            debugger
+            var i = document.getElementsByTagName("input");
+            line.attributes.d.value = "M" + i[0].value + "," + i[1].value + "c0-" + i[2].value + "," + i[3].value + "-" +
+                i[4].value + "," + i[5].value + "-" + i[6].value;
+
+            line.attributes.d.value = "M200,300 Q400,50 600,300 T1000,300";
+
+        }
+    </script>
+
+
+    <embed id="svg" src="arc1.svg" type="image/svg+xml" />
+
+    M
+    <input value="12.967"/>
+    <input value="88.338"/>
+    c0-
+    <input value="43.255"/>
+    <input value="33.431"/>
+    -
+    <input value="78.257"/>
+    <input value="74.745"/>
+    -
+    <input value="78.257"/>
+
+    <button onclick="svgApply()">Apply</button>
+
+    
+</body>
+</html>
